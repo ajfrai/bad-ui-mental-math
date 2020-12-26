@@ -1,0 +1,11 @@
+<html>
+<body>
+{% if result.real_answer|float == result.submitted_answer|float %}
+Great job!!
+{% else %}
+WRONG
+{% endif %}
+<br>
+<a href = {{ url_for('show_challenge') }}> New Challenge </a>
+</body>
+</html>
