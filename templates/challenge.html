@@ -1,0 +1,15 @@
+<html>
+<head>
+<script type = "text/javascript"
+         src = "{{ url_for('static', filename = 'functions.js') }}" >
+</script>
+</head>
+<body onload="setTimeout(tooslow,1200,{{ challenge.answer }} )">
+  {{ challenge.a  }} {{ challenge.sign }} {{ challenge.b }}
+  <form action="http://127.0.0.1:5000/challenge" method="POST">
+  Answer: <input type="text" name="submitted_answer" id = 'submitted_answer'><br>
+  	<input hidden name = 'real_answer' id = 'real_answer' value = {{ challenge.answer }}> 
+	<input type="submit" value="submit">
+  </form>
+</body>
+</html>
